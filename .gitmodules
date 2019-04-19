@@ -1,4 +1,0 @@
-[submodule "ser2tcp/src"]
-	path = ser2tcp/src
-	url = https://gitee.com/rise0chen/openwrt-package.git
-	branch = ser2tcp
