@@ -28,6 +28,7 @@ int main(int argc, char** argv) {
       break;
     }
     if (pid == 0) {
+      sleep(6);
       ret = execv(child_argv[0], (char**)child_argv);
       if (ret < 0) {
         perror("execv.");
