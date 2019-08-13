@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=smartNet
-PKG_VERSION:=1.0.0
+PKG_VERSION:=2.0.0
 PKG_RELEASE:=1
 PKG_MAINTAINER:=rise0chen
 
@@ -27,8 +27,10 @@ endef
 define Package/$(PKG_NAME)/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_DIR) $(1)/etc
+	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(PKG_NAME) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/fiip.ini $(1)/etc
+	$(INSTALL_BIN) ./smartNet.ini $(1)/etc
+	$(INSTALL_BIN) ./smartNet.sh $(1)/etc/init.d
 endef
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
